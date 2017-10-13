@@ -21,9 +21,9 @@ npm start
 
 ## 演示
 ### 登录模块单独演示
-![登录模块单独演示](https://github.com/damingerdai/webqq-register/screenshot/show.gif)
+![登录模块单独演示](https://raw.githubusercontent.com/damingerdai/webqq-register/master/screenshot/show.gif)
 ### 登录模块配合后台演示
-![登录模块配合后台演示](https://github.com/damingerdai/webqq-register/screenshot/show2.gif)
+![登录模块配合后台演示](https://raw.githubusercontent.com/damingerdai/webqq-register/master/screenshot/show2.gif)
 
 ## 开发环境
 ### 开发工具
