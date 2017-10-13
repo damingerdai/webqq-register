@@ -19,6 +19,12 @@ npm start
 ```
 现在你可以在你的浏览器中访问 http://localhost:4200。
 
+## 演示
+### 登录模块单独演示
+![登录模块单独演示](https://github.com/damingerdai/webqq-register/screenshot/show.gif)
+### 登录模块配合后台演示
+![登录模块配合后台演示](https://github.com/damingerdai/webqq-register/screenshot/show2.gif)
+
 ## 开发环境
 ### 开发工具
 Visual Studio Code
