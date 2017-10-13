@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-md-5 col-md-offset-3">
+    <div *ngIf="!submitted"> 
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h2 class="panel-title text-center">用户注册</h2>
+          </div>
+        </div>
+        <div *ngIf="error" class="panel panel-warning" >
+          <div class="panel-heading">
+            <h2 class="panel-title text-center">{{error}}</h2>
+          </div>
+        </div>
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm" class="form-signin" action="" method="post" role="form" enctype="multipart/form-data">
+            <div class="form-group">
+              <label for="username">用户名:</label>
+              <input type="text" class="form-control" name="username" id="username"  required  minlength="4" [(ngModel)]="user.username" #username="ngModel">
+              <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert alert-danger"> 
+                 <div *ngIf="username.errors.required"> 
+                    用户名是必须的
+                </div>
+                <div *ngIf="username.errors.minlength"> 
+                    用户名不得低于4个字符
+                </div>    
+              </div>       
+            </div>
+            <div class="form-group">
+              <label for="password">密码：</label>
+              <input type="password" class="form-control" name="password" id="password" [(ngModel)]="user.password" required pattern="^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,20}$" #password="ngModel">
+              <div *ngIf="password.invalid && ( password.dirty || password.touched)" class="alert alert-danger">
+                <div *ngIf="password.errors.required">
+                    密码是必须的
+                </div>
+                <div *ngIf="password.errors.pattern">
+                    密码由6-21字母和数字组成，不能是纯数字或纯英文
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">邮箱：</label>
+              <input type="email" class="form-control" name="email" id="email" [(ngModel)]="user.email" required email #email="ngModel">
+              <div *ngIf="email.invalid && ( email.dirty || email.touched )" class="alert alert-danger">
+                <div *ngIf="email.errors.required">
+                  邮箱是必须的
+                </div>
+                <div *ngIf="email.errors.email">
+                  邮箱格式不正确
+                </div>
+              </div>
+            </div>
+            <div class="form-group" style="text-align: center">        
+              <button type="reset" class="btn btn-default" >重置</button>
+              <button type="submit" class="btn btn-success" [disabled]="!userForm.form.valid">提交</button>      
+            </div>
+        </form> 
+    </div>
+    <div *ngIf="submitted">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+               <h2 class="panel-title text-center">欢迎进入Web QQ的世界</h2>
+            </div>
+            <div class="panel-body" style="text-align: center">
+              <a class="btn btn-success" href="http://127.0.0.1:8080/">
+                登录
+              </a>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
